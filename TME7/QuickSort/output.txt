@@ -1,0 +1,8 @@
+
+Running QuickSort_seq ...
+Pour n=27 (2^n=134217728): temps de calcul (avec gettimeofday()) : 12.2059 s
+Verification ...  ok.
+
+Running QuickSort_mp ...
+Pour n=27 (2^n=134217728): temps de calcul (avec gettimeofday()) : 3.59445 s
+Verification ...  ok.

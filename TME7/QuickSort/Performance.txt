@@ -1,0 +1,10 @@
+MODIF HARD
+==========
+
+SEQ    = 12.111 s
+OMP    = 3.49381 s
+nbCore = 4
+n      = 27
+
+SPEED UP = SEQ/OMP      -> 3.46641631915 (RES)
+EFFICIENT= RES / nbCore -> 0.86660407978
