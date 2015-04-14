@@ -1,0 +1,32 @@
+NORMAL
+======
+
+SEQ    = 12.6154 s
+n      = 16384
+
+GCC VECTOR
+==========
+
+SEQ    = 12.6154 s
+GCC    = 12.6125 s
+n      = 16384
+
+SPEED UP = SEQ/GCC      ->  1.00022993062
+
+OPENMP 4.0
+==========
+
+SEQ    = 
+OMP    = 
+n      = 16384
+
+SPEED UP = SEQ/OMP      ->  
+
+AVX2
+====
+
+SEQ    = 
+AVX    = 
+n      = 16384
+
+SPEED UP = SEQ/AVX      ->  

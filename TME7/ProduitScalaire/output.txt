@@ -1,0 +1,12 @@
+
+Running ProduitScalaire_scal ...
+res = 16384.000000 
+Temps total de calcul : 12.5249 sec
+
+Running ProduitScalairePerf_scal ...
+res = 16384.000000 
+Temps total de calcul : 12.5196 sec
+
+Running ProduitScalaireSIMD_scal ...
+res = 16384.000000 
+Temps total de calcul : 12.5281 sec
