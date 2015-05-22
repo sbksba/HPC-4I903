@@ -1,0 +1,6 @@
+OpenBLAS
+========
+
+BLAS_DIR=/users/Enseignants/fortin/DOWNLOAD/OpenBLAS/xyani_OpenBLAS-9c51cdf
+
+$gcc -I$(BLAS_DIR) -o matmul_blas matmul_blas.c $(BLAS_DIR)/libopenblas.a -lpthread

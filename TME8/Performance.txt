@@ -1,0 +1,6 @@
+Performance Crete
+=================
+
+1 coeur            : 3.40GHz * 2 (FMA) * 8 (AVX) = 54.4 Gflop/s
+tout le processeur : 4 coeurs (Physique)
+                     4 * 54.4 = 217.8 Gflop/s
