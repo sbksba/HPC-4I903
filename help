@@ -1,0 +1,8 @@
+INIT
+----
+ssh-agent bash
+ssh-add
+
+KILL
+----
+ssh-agent -k
