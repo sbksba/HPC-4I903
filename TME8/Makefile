@@ -9,8 +9,9 @@ EXECS     = matmul
 EXECSPERF = matmulPerf
 EXECSOMP  = matmulOMP
 EXECSBLAS = matmulBLAS
+EXECSBLASPARA = matmulBLASPara
 
-all: $(EXECS) $(EXECSPERF) $(EXECSOMP) $(EXECSBLAS)
+all: $(EXECS) $(EXECSPERF) $(EXECSOMP) $(EXECSBLAS) $(EXECSBLASPARA)
 
 $(EXECS): $(EXECS).c
 	$(CC) -o $@ $<
@@ -24,13 +25,16 @@ $(EXECSOMP): $(EXECSOMP).c
 $(EXECSBLAS): $(EXECSBLAS).c
 	$(CC) $(CFLAGS) -I$(BLAS_DIR) $< -o $@ $(BLASFLAGS)
 
+$(EXECSBLASPARA): $(EXECSBLASPARA).c
+	$(CC) $(CFLAGS) -I$(BLAS_DIR) $(OMPFLAGS) $< -o $@ $(BLASFLAGS)
+
 .PHONY: all proper clean cleanpaper test bench
 
 proper:
 	rm -f *~
 
 clean: proper
-	rm -rf $(EXECS) $(EXECSPERF) $(EXECSOMP) $(EXECSBLAS)
+	rm -rf $(EXECS) $(EXECSPERF) $(EXECSOMP) $(EXECSBLAS) $(EXECSBLASPARA)
 
 cleanpaper: proper
 	rm -f data_*.txt
@@ -56,6 +60,11 @@ test:
 	@echo "##############"
 	./matmulBLAS 16
 	@echo ""
+	@echo "##################"
+	@echo "# MATMULBLASPARA #"
+	@echo "##################"
+	./matmulBLASPARA 16
+	@echo ""
 
 bench:
 	@echo "# MATMUL #"
@@ -69,4 +78,7 @@ bench:
 	@echo ""
 	@echo "# MATMULBLAS #"
 	./run.sh matmulBLAS
+	@echo ""
+	@echo "# MATMULBLASPARA #"
+	./run.sh matmulBLASPARA
 	@echo ""
